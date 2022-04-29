@@ -1,0 +1,173 @@
+.game-background{
+    height: 400px;
+    position: relative;
+}
+
+.game-background-image{
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 10px;
+}
+
+.game-title{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0, 0.8) 20%, rgba(0,0,0,1) 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+
+.game-info{
+    margin-top: 30px;
+    min-height: 250px;
+    background-color: #222222;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.game-info-item{
+    padding: 10px;
+}
+
+.game-info-item-name{
+    margin-top: 10px;
+    text-align: center;
+    color: yellowgreen;
+}
+
+.game-info-item-content{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.game-rating{
+    margin-top: 0;
+    font-size: 40px;
+    font-weight: 600;
+}
+.game-description-header{
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 500;
+    align-self: flex-start;
+    color: yellowgreen;
+}
+
+.game-description-content{
+    margin-top: 5px;
+    white-space: pre-line;
+}
+
+.game-screenshot{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-screenshot-display{
+    margin-top: 10px;
+    height: 300px;
+}
+
+.game-screenshot-display-img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.game-screenshot-roll{
+    max-width: 100%;
+    height: 60px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.game-screenshot-roll-item{
+    width: 100px;
+    height: 100%;
+    margin: 0 3px;
+    border: 1px solid white;
+}
+
+.game-screenshot-roll-item-active{
+    border: 2px solid yellow;
+}
+
+.game-screenshot-roll-arrow-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.game-screenshot-roll-arrow{
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkgreen;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.game-screenshot-roll-arrow .bi{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.arrow-left{
+    left: 0;
+}
+
+.arrow-right{
+    right: 0;
+}
+
+.game-screenshot-roll-extra{
+    max-width: 100%;
+    height: 60px;
+    padding: 0 17px;
+    display: flex;
+    position: relative;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.game-screenshot-roll-extra::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.game-screenshot-header{
+    align-self: flex-start;
+}
+
+.game-screenshot-unavailable{
+    align-self: flex-start;
+    font-style: italic;
+}
+
+@media only screen and (max-width: 450px) {
+    .game-info{
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 

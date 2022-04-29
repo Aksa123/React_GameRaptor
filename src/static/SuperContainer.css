@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+}
+
+:root{
+    --theme-bg: rgb(25, 25, 24);
+}
+
+html{
+    background-color: var(--theme-bg);
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+#super-container{
+    min-height: 100vh;
+    padding-bottom: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.major-body{
+    max-width: 950px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: transparent;
+}
+

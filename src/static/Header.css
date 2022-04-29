@@ -1,0 +1,173 @@
+#header{
+    min-height: 60px;
+    border-bottom: 1px solid grey;
+    font-weight: 500;
+    background-color: var(--theme-bg);
+}
+
+#header-content{
+    width: 100%;
+    height: 60px;
+    display: flex;
+}
+
+.header-item{
+    width: 100px;
+    height: 100%;
+    font-weight: 500;
+    position: relative;
+    z-index: 5;
+    background-color: transparent;
+    display: inline-block;
+}
+
+#home{
+    width: 200px;
+    margin-right: auto;
+    border-bottom: 0;
+    background-color: transparent;
+}
+
+#home a{
+    justify-content: flex-start;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+#raptor{
+    color: limegreen;
+    font-size: 25px;
+}
+
+.header-item-link{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    position: relative;
+}
+
+#menu-path{
+    margin-bottom: 10px;
+    display: none;
+}
+
+#search{
+    width: 60px;
+    height: 100%;
+    /* background-color: lightgreen; */
+}
+
+#search-icon{
+    max-width: 32px;
+    background-color: transparent;
+}
+
+.header-item-dropdown{
+    width: 200px;
+    display: none;
+    position: relative;
+    background-color: grey;
+}
+
+.header-item-dropdown-item{
+    width: 100%;
+    height: 32px;
+    padding-left: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+}
+
+.header-item:hover .header-item-dropdown{
+    display: inline-block;
+}
+
+.header-item:hover {
+    border-bottom: 3px solid limegreen;
+}
+
+.header-item-dropdown-item:hover{
+    background-color: yellowgreen;
+}
+
+#menu{
+    height: 100%;
+    display: flex;
+}
+
+#menu-button-container{
+    z-index: 6;
+}
+
+#menu-button{
+    width: 100%;
+    height: 60px;
+    display: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.header-menu-arrow{
+    display: none;
+    position: absolute;
+    left: -2px;
+}
+
+#menu-scroll{
+    display: flex;
+    position: relative;
+    height: 100%;
+    z-index: 5;
+    transition-duration: 500ms;
+}
+
+.menu-scroll-close{
+    top: 0;
+}
+.menu-scroll-open{
+    top: -0;
+}
+
+@media only screen and (max-width: 600px) {
+    #menu-button{
+        display: block;
+    }
+
+    #menu{
+        flex-direction: column;
+        background-color: grey;
+    }
+
+    .header-item{
+        background-color: grey;
+    }
+
+    .header-item:hover{
+        border-bottom: 0;
+        background-color: yellowgreen;
+    }
+
+    .header-item:hover .header-item-dropdown{
+        border: 1px solid black;
+        top: -60px;
+        right: 200px;
+    }
+
+    .header-menu-arrow{
+        display: block;
+    }
+
+    #menu-scroll{
+        flex-direction: column;
+    }
+
+    .menu-scroll-close{
+        top: -500px;
+    }
+}

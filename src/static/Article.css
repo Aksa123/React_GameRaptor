@@ -1,0 +1,49 @@
+.article{
+    margin-top: 90px;
+}
+
+.article-header{
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid lime;
+}
+
+.article-header-name{
+    margin-right: auto;
+    font-size: 38px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.article-header-viewall{
+    font-size: 14px;
+    font-weight: 500;
+    align-self: flex-end;
+    display: none;
+}
+
+.bi-arrow-right-circle{
+    font-size: 1.2em;
+    margin-left: 3px;
+    color: greenyellow;
+}
+
+.article-grid{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(350px, auto);
+    gap: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+    .article-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 
+
+@media only screen and (max-width: 500px) {
+    .article-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+} 

@@ -1,0 +1,102 @@
+/* Banner and BannerItem components */
+
+:root{
+    --article-item-img-height: 170px;
+}
+
+#content{
+    max-width: 100vw;
+    margin-bottom: 100px;
+    padding-top: 60px;
+    background-color: var(--theme-bg);
+}
+
+
+
+
+/* Article Extra */
+.article-extra-header{
+    display: block;
+    padding: 0;
+}
+
+.article-extra-header-menu{
+    margin-top: 7px;
+}
+
+.article-header-menu-item{
+    font-size: 25px;
+    font-weight: 500;
+    padding: 5px 5px;
+    margin: 0 10px;
+    z-index: 2;
+    position: relative;
+    border-bottom: 3px solid transparent;
+}
+
+.article-header-menu-item:hover{
+    border-bottom: 3px solid greenyellow;
+}
+
+.margin-left-0{
+    margin-left: 0;
+}
+
+.hotgames-grid{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 135px;
+    gap: 20px;
+}
+
+.hotgames-item{
+    position: relative;
+    border-radius: 15px;
+}
+
+.hotgames-item:hover{
+    transform: scale(1.05);
+    transition: transform 200ms linear;
+    border: 2px solid greenyellow;
+}
+
+.hotgames-item-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 15px;
+}
+
+.hotgames-item-data{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0, 0.7);
+    padding: 0 10px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.hotgames-item-arrow{
+    margin-left: auto;
+}
+
+.no-games-found{
+    margin: 0 auto;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .hotgames-grid{
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}

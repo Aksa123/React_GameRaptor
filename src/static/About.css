@@ -1,0 +1,21 @@
+ul, ol {
+    margin-top: 10px;
+    list-style-position: inside
+}
+
+.about-header{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.about-content{
+    margin-top: 10px;
+}
+
+.text-colored{
+    color: yellowgreen;
+}
+
+.contact-item{
+    color: yellowgreen;
+}
