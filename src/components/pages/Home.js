@@ -24,7 +24,7 @@ class Home extends React.Component {
         
 
     getLatestGames(page=1, size=9) {
-        let url = getGamesListURL(page, size)
+        let url = getGamesListURL(page, size, "-dates")
         fetch(url)
         .then(data => data.json())
         .then(data => {
@@ -42,7 +42,6 @@ class Home extends React.Component {
                     articleData: prevState.articleData.concat(data.results)
                 }))
             }
-            
         })
         .catch(error => {
             alert(error)
@@ -51,7 +50,7 @@ class Home extends React.Component {
     }
 
     getHotGames() {
-        let url = getGamesListURL(1, 8, "-added")
+        let url = getGamesListURL(1, 8, "-metacritic")
         fetch(url)
         .then(data => data.json())
         .then(data => {

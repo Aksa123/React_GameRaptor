@@ -119,10 +119,10 @@ function GameDetail() {
                         <div className="game-info-item-name">Platforms</div>
                         <div className="game-platform game-info-item-content">{gameDetail.platforms.map((item, index) => {
                             if (index < gameDetail.platforms.length -1) {
-                                return <span key={item.platform.id}><Link  to={`/platforms/${item.platform.slug}`} >{item.platform.name}</Link>, </span>
+                                return <span key={item.platform.id}><Link  to={`/platforms/${item.platform.id}`} >{item.platform.name}</Link>, </span>
                             }
                             else{
-                                return <span key={item.platform.id}><Link  to={`/platforms/${item.platform.slug}`} >{item.platform.name}</Link></span>
+                                return <span key={item.platform.id}><Link  to={`/platforms/${item.platform.id}`} >{item.platform.name}</Link></span>
                             }
                         })}</div>
                     </div>

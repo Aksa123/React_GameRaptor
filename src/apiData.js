@@ -1,8 +1,7 @@
 const key = "84350cd8a8a7472a8cbc7dc14aa547b3"
 
-function getGamesListURL(page=1, size=1, ordering="-dates", filterKey=null, filterValue=null) {
+function getGamesListURL(page=1, size=1, ordering="-added", filterKey=null, filterValue=null) {
     let url = new URL("https://api.rawg.io/api/games")
-    let key = "84350cd8a8a7472a8cbc7dc14aa547b3"
     url.searchParams.append("key", key)
     url.searchParams.append("ordering", ordering)
     url.searchParams.append("page_size", size)
@@ -10,12 +9,12 @@ function getGamesListURL(page=1, size=1, ordering="-dates", filterKey=null, filt
     if (filterKey !== null && filterValue !== null){
         url.searchParams.append(filterKey, filterValue)
     }
+
     return url
 }
 
 function getAllGenresURL(){
     let url = new URL("https://api.rawg.io/api/genres")
-    let key = "84350cd8a8a7472a8cbc7dc14aa547b3"
     url.searchParams.append("key", key)
     return url
 }
@@ -89,4 +88,21 @@ function getGameScreenshotURL(gameSlug) {
     return url
 }
 
-export {getGamesListURL, getAllGenresURL, GenreList, PlatformList, getGameDetailURL, getGameScreenshotURL }
+// browsePath: developers, publishers, genres, platforms
+function getBrowseListURL(browsePath, page, size){
+    let url = new URL(`https://api.rawg.io/api/${browsePath}`)
+    url.searchParams.append("key", key)
+    url.searchParams.append("page_size", size)
+    url.searchParams.append("page", page)
+    return url
+}
+
+function getURLWithCustomPath(path, size, page){
+    let url = new URL(`https://api.rawg.io/api/${path}`)
+    url.searchParams.append("key", key)
+    url.searchParams.append("page_size", size)
+    url.searchParams.append("page", page)
+    return url
+}
+
+export {getGamesListURL, getAllGenresURL, GenreList, PlatformList, getGameDetailURL, getGameScreenshotURL, getBrowseListURL, getURLWithCustomPath }

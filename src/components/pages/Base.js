@@ -1,25 +1,18 @@
-import {useState, useEffect} from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import {Outlet} from "react-router-dom"
 import "../../static/Content.css"
 
-function Base() {
-    let [outletPage, setOutletPage] = useState(<Outlet />)
-    let [deactivateHeaderMenu, setDeactivateHeaderMenu] = useState(true)
+function Base({clickElement}) {
 
-    useEffect(() => {
-        setDeactivateHeaderMenu((prev) => prev+1)
-        console.log(outletPage)
-    }, [outletPage])
-    
     return (
         <>
-            <Header deactivateHeaderMenu={deactivateHeaderMenu} />
+            <Header clickElement={clickElement} />
             <div id="content" className="major-body">
-                {outletPage}
+                <Outlet />
             </div>
             <Footer />
+            <div id="overlay" className="overlay-z-index"></div>
         </>
     )
 }

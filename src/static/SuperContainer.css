@@ -38,3 +38,21 @@ a:link, a:visited, a:hover, a:active {
     background-color: transparent;
 }
 
+.pointer-events-none{
+    pointer-events: none;
+}
+
+#overlay{
+    background: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 85;
+    display: none;
+}
+
+.overlay-active{
+    display: block !important;
+}

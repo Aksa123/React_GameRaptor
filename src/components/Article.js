@@ -5,15 +5,15 @@ import "../static/Article.css"
 class Article extends React.Component {
     constructor(props) {
         super(props)
-        this.articleTitle = props.articleTitle
         this.state = {
-            data: props.articleData
+            data: props.articleData,
+            articleTitle: props.articleTitle
         }
     }
 
     // update state with new props before rendering
     static getDerivedStateFromProps(newProps, state) {
-        return {data: newProps.articleData}
+        return {data: newProps.articleData, articleTitle: newProps.articleTitle}
     }
 
     render() {
@@ -21,7 +21,7 @@ class Article extends React.Component {
             return (
                 <div className="article">
                     <div className="article-header">
-                        <div className="article-header-name">{this.articleTitle}</div>
+                        <div className="article-header-name">{this.state.articleTitle}</div>
                         <div className="article-header-viewall">View All <i className="bi bi-arrow-right-circle"></i></div>
                     </div>
                     <div className="article-grid">

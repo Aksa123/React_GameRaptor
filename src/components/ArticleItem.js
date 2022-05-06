@@ -10,8 +10,8 @@ class ArticleItem extends React.Component {
         this.name = props.props.name
         this.id = props.props.id
         this.author = "Arseilles"
-        this.updated = new Date(props.props.updated)
-        this.updated = this.updated.toLocaleDateString(undefined, {day: "numeric", month: "short", year: "numeric"})
+        this.date = new Date(props.props.released)
+        this.date = this.date.toLocaleDateString(undefined, {day: "numeric", month: "short", year: "numeric"})
         this.platforms = props.props.platforms.map(item => item.platform.name).join(", ")
         this.genres = props.props.genres.map((item, index) => <Link key={item.id} to={`/genres/${item.slug}`} className="article-item-genre">{item.name}</Link> )
         this.genres = this.linearizeGenres(this.genres)
@@ -45,7 +45,7 @@ class ArticleItem extends React.Component {
                         <div>
                             {this.genres}
                         </div>
-                        <div className="article-item-date">{this.updated}</div>
+                        <div className="article-item-date">{this.date}</div>
                     </div>
                 </div>
             </div>
