@@ -158,6 +158,7 @@ function SuperContainer() {
                                 <Route path=":page" element={<BrowseBase browsePath="platforms" />}/>
                             </Route>
                         </Route>
+                        <Route path="*" element={<div id="page-not-found"><img src="https://i.imgflip.com/6fqq2v.jpg" alt="page-not-found" /></div>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>

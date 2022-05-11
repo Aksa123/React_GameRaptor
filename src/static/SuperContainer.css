@@ -56,3 +56,13 @@ a:link, a:visited, a:hover, a:active {
 .overlay-active{
     display: block !important;
 }
+
+#page-not-found{
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+#page-not-found img{
+    max-width: 380px;
+}
