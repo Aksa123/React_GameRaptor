@@ -21,7 +21,6 @@ function MenuBase({filterKey, filterValue=null, ordering="-added", articleTitle,
         let menuText =  menu || filterValue || "Uncoded"
         let filterValueOrSlug = (filterValue === null ? slug : filterValue)
         let url = getGamesListURL(page, size, ordering, filterKey, filterValueOrSlug)
-        console.log(url)
         async function getGamesData() {
             try{
                 let res = await fetch(url).then(data => data.json())

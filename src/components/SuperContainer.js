@@ -19,6 +19,7 @@ import SearchResult from "./pages/SearchResult"
 import BrowseBase from "./pages/BrowseBase"
 import "../static/SuperContainer.css"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import RedirectWithRelativePath from "./RedirectWithRelativePath"
 
 function SuperContainer() {
     let [clickElement, setClickElement] = useState(null)
@@ -29,10 +30,11 @@ function SuperContainer() {
 
     return (
         <div id="super-container" onClick={(e) => updateClickElement(e)}>
-            <BrowserRouter>
+            <BrowserRouter basename="/gameraptor">
                 <Routes>
-                    <Route path="/" element={<Base clickElement={clickElement} test="nani" />} >
+                    <Route path="" element={<Base clickElement={clickElement} test="nani" />} >
                         <Route path="" element={<Home articleTitle="Latest in Gaming" />} />
+                        <Route path="*" element={<RedirectWithRelativePath />} />
                         <Route path="genres" >
                             <Route path="action" >
                                 <Route path="" element={<Navigate to="1" />} />
