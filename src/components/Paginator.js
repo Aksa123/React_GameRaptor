@@ -9,7 +9,8 @@ function Paginator({activePage, itemsCount, pageSize}) {
     let pageItems = []
     let [page, setPage] = useState(activePage)
     let path = new URL(window.location).pathname
-    let pathWithoutPage = path.split("/").slice(0,3).join("/")
+    let pathSplit = path.split("/")
+    let pathWithoutPage = pathSplit.slice(-3, -1).join("/")
 
     useEffect(() => {
         setPage(activePage)
@@ -40,11 +41,11 @@ function Paginator({activePage, itemsCount, pageSize}) {
     
     return (
         <div className="paginator">
-            {(page > pageActiveMid && pageItems.length === pagesDisplayed) ? <Link to={`${pathWithoutPage}/1`}><button className="page" id="page-1" value="1" >First</button></Link> : null}
+            {(page > pageActiveMid && pageItems.length === pagesDisplayed) ? <Link to={`/${pathWithoutPage}/1`}><button className="page" id="page-1" value="1" >First</button></Link> : null}
             {pageItems.map(item => {
-                return <Link key={item.id} to={`${pathWithoutPage}/${item.value}`}><button className={`page ${item.isActive ? 'page-active' : ''}`}  id={item.id} value={item.value} >{item.value}</button></Link>
+                return <Link key={item.id} to={`/${pathWithoutPage}/${item.value}`}><button className={`page ${item.isActive ? 'page-active' : ''}`}  id={item.id} value={item.value} >{item.value}</button></Link>
             })}
-            { page < (pageMax - pageActiveMid) ? <Link to={`${pathWithoutPage}/${pageMax}`}><button className="page" id={`page-${pageMax}`} value={pageMax} >Last</button></Link> : null }
+            { page < (pageMax - pageActiveMid) ? <Link to={`/${pathWithoutPage}/${pageMax}`}><button className="page" id={`page-${pageMax}`} value={pageMax} >Last</button></Link> : null }
         </div>
     )
 }

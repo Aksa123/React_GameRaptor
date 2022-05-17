@@ -4,7 +4,7 @@ import "../static/Banner.css"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
 
 
-class Banner extends React.Component {
+class Banner2 extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -15,17 +15,26 @@ class Banner extends React.Component {
 
     // update state before re-render
     static getDerivedStateFromProps(newProps, state) {
-        return {data: newProps.bannerData}
+        if (newProps.bannerData.length > 1){
+            return {data: newProps.bannerData}
+        }
+        else{
+            return {data: newProps.bannerData, activeBannerIndex: 0}
+        }  
     }
 
     componentDidMount() {
-        this.bannerRotation = setInterval(() => {
-            this.rotateBanner()
-        }, 3000);
+        this.startBannerRotation()
     }
 
     componentWillUnmount() {
         clearInterval(this.bannerRotation)
+    }
+
+    startBannerRotation() {
+        this.bannerRotation = setInterval(() => {
+            this.rotateBanner()
+        }, 3000);
     }
 
     rotateBanner() {
@@ -55,4 +64,4 @@ class Banner extends React.Component {
 }
 
 
-export default Banner
+export default Banner2
