@@ -29,7 +29,7 @@ function SuperContainer() {
 
     return (
         <div id="super-container" onClick={(e) => updateClickElement(e)}>
-            <BrowserRouter basename="/gameraptor">
+            <BrowserRouter >
                 <Routes>
                     <Route path="" element={<Base clickElement={clickElement} test="nani" />} >
                         <Route path="" element={<Home articleTitle="Latest in Gaming" />} />
